@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import logo from './media/logo.jpeg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Infrared from './infrared';
+import Pano from './pano';
+import Home from './Home'
+import Bandw from './bandw'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Routes>
+          <Route path='/' exact element={<Home/>} />
+          <Route path='/infrared' exact element={<Infrared/>} />
+          <Route path='/pano' exact element={<Pano/>} />
+          <Route path='/b&w' exact element={<Bandw/>} />
+          /
+      </Routes>
+      </Router>
   );
 }
 
